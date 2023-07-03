@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<style>
+.e_msg{
+	color: #f00;
+	font-size: 0.8rem;
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+
+
+<form action="" method="post" th:object="${loginMember}">
+	<table border="">
+		<tr>
+			<td>ID</td>
+			<td><input type="text" th:field="*{pid}" />
+			<p class="e_msg" th:if="${#fields.hasErrors('pid')}" th:errors="*{pid}">에러다</p>
+			</td>
+		</tr>
+		<tr>
+			<td>PW</td>
+			<td><input type="text" name="pw" />
+			<p class="e_msg" th:if="${#fields.hasErrors('pw')}" th:errors="*{pw}">에러다</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="LOGIN" /></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

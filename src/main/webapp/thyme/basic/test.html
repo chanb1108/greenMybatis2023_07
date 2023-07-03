@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>시험점수 구하기</title>
+</head>
+<body>
+<h1>Test</h1>
+<style>
+table{
+	font-size: 1.1rem;
+	text-align: center;
+}
+tr:first-child>td{
+	background: #000;
+	color: #fff;
+}
+</style>
+<table border="">
+	<tr>
+		<td>이름</td>
+		<td>국어</td>
+		<td>영어</td>
+		<td>수학</td>
+		<td>총점</td>
+		<td>평균</td>
+		<td>등급</td>
+	</tr>
+<th:block th:with="tot=${st1.jum[0]+st1.jum[1]+st1.jum[2]}">
+	<tr>
+		<td>[[${st1.name}]]</td>
+		<td>[[${st1.jum[0]}]]</td>
+		<td>[[${st1.jum[1]}]]</td>
+		<td>[[${st1.jum[2]}]]</td>
+		<td>[[${tot}]]</td>
+		<td>[[${tot/st1.jum.length}]]</td>
+		<td>[[${tot/st1.jum.length >= 90 ? '수' : 
+			tot/st1.jum.length >= 80 ? '우' :
+			tot/st1.jum.length >= 70 ? '미' :
+			tot/st1.jum.length >= 60 ? '양' : '가'}]]</td>
+	</tr>
+</th:block>
+<th:block th:with="tot=${st2.jum[0]+st2.jum[1]+st2.jum[2]}">
+	<tr>
+		<td>[[${st2.name}]]</td>
+		<td>[[${st2.jum[0]}]]</td>
+		<td>[[${st2.jum[1]}]]</td>
+		<td>[[${st2.jum[2]}]]</td>
+		<td>[[${tot}]]</td>
+		<td>[[${tot/st2.jum.length}]]</td>
+		<td>[[${tot/st2.jum.length >= 90 ? '수' : 
+			tot/st2.jum.length >= 80 ? '우' :
+			tot/st2.jum.length >= 70 ? '미' :
+			tot/st2.jum.length >= 60 ? '양' : '가'}]]</td>
+	</tr>
+</th:block>
+<th:block th:with="tot=${st3.jum[0]+st3.jum[1]+st3.jum[2]}">
+	<tr>
+		<td>[[${st3.name}]]</td>
+		<td>[[${st3.jum[0]}]]</td>
+		<td>[[${st3.jum[1]}]]</td>
+		<td>[[${st3.jum[2]}]]</td>
+		<td>[[${tot}]]</td>
+		<td>[[${tot/st3.jum.length}]]</td>
+		<td>[[${tot/st3.jum.length >= 90 ? '수' : 
+			tot/st3.jum.length >= 80 ? '우' :
+			tot/st3.jum.length >= 70 ? '미' :
+			tot/st3.jum.length >= 60 ? '양' : '가'}]]</td>
+	</tr>
+</th:block>
+<th:block th:with="tot=${st4.jum[0]+st4.jum[1]+st4.jum[2]}">
+	<tr>
+		<td>[[${st4.name}]]</td>
+		<td>[[${st4.jum[0]}]]</td>
+		<td>[[${st4.jum[1]}]]</td>
+		<td>[[${st4.jum[2]}]]</td>
+		<td>[[${tot}]]</td>
+		<td>[[${tot/st4.jum.length}]]</td>
+		<td>[[${tot/st4.jum.length >= 90 ? '수' : 
+			tot/st4.jum.length >= 80 ? '우' :
+			tot/st4.jum.length >= 70 ? '미' :
+			tot/st4.jum.length >= 60 ? '양' : '가'}]]</td>
+	</tr>
+</th:block>
+<th:block th:with="tot=${st5.jum[0]+st5.jum[1]+st5.jum[2]}">
+	<tr>
+		<td>[[${st5.name}]]</td>
+		<td>[[${st5.jum[0]}]]</td>
+		<td>[[${st5.jum[1]}]]</td>
+		<td>[[${st5.jum[2]}]]</td>
+		<td>[[${tot}]]</td>
+		<td>[[${tot/st5.jum.length}]]</td>
+		<td>[[${tot/st5.jum.length >= 90 ? '수' : 
+			tot/st5.jum.length >= 80 ? '우' :
+			tot/st5.jum.length >= 70 ? '미' :
+			tot/st5.jum.length >= 60 ? '양' : '가'}]]</td>
+	</tr>
+</th:block>
+</table>
+</body>
+</html>
